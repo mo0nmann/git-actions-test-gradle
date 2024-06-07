@@ -23,7 +23,8 @@ jobs:
         sonar_token: ${{ secrets.SONAR_TOKEN }}
         sonar_args: >
           -Dsonar.organization=mo0nmann
-          -Dsonar.projectKey=mo0nmann_git-actions-test-node
+          -Dsonar.projectKey=mo0nmann_git-actions-test-gradle
+          -Dsonar.host.url=https://sonarcloud.io
         docker_image_name: test-gradle-project
         dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
         dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
