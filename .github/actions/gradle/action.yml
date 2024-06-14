@@ -131,6 +131,17 @@ runs:
         username: ${{ github.repository_owner }}
         password: ${{ inputs.github_token }}
 
+    - name: Create package.json for Semantic Release
+      run: |
+        if [ ! -f "package.json" ]; then
+        echo '{
+          "name": "test-app",
+          "version": "0.0.0",
+          "private": true
+        }' > package.json
+        fi
+      shell: bash
+
     - name: Semantic Release
       if: ${{ steps.branch-names.outputs.current_branch == 'main' && github.event_name == 'push' }} 
       uses: cycjimmy/semantic-release-action@v4
