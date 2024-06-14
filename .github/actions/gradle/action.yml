@@ -85,6 +85,7 @@ runs:
     - name: Build Docker image for testing
       uses: docker/build-push-action@v5
       with:
+        context: .
         load: true
         tags: ${{ inputs.docker_image_name }}:${{ env.formatted_branch_name }}
         cache-from: type=gha
@@ -171,6 +172,7 @@ runs:
       if: ${{ steps.branch-names.outputs.current_branch == 'main' && github.event_name == 'push' }}
       uses: docker/build-push-action@v5
       with:
+        context: .
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
