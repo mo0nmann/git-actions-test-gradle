@@ -59,16 +59,16 @@ runs:
       uses: gradle/actions/setup-gradle@v3
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --warning-mode all
       shell: bash
 
     - name: Run tests
-      run: ./gradlew test
+      run: ./gradlew test --warning-mode all
       shell: bash
 
     - name: Sonarcloud SAST
       if: ${{ inputs.sonar_token != '' }}
-      run: ./gradlew sonar --init-script ./.github/actions/gradle/sonar-init.gradle -Dsonar.token=${{ inputs.sonar_token }} ${{ inputs.sonar_args }}
+      run: ./gradlew sonar --init-script ./.github/actions/gradle/sonar-init.gradle -Dsonar.token=${{ inputs.sonar_token }} ${{ inputs.sonar_args }} --warning-mode all
       shell: bash
 
     - name: Add QEMU support
