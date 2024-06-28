@@ -8,5 +8,5 @@ initscript {
 }
 
 allprojects {
-    apply plugin: org.sonarqube.gradle.SonarQubePlugin
+    apply plugin: "org.sonarqube"
 }
