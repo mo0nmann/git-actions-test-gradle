@@ -10,5 +10,5 @@ initscript {
 }
 
 allprojects {
-    apply plugin: org.sonarqube
+    apply plugin: org.sonarqube.gradle.SonarQubePlugin
 }
