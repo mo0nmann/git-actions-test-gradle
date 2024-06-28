@@ -1,0 +1,12 @@
+initscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:5.0.0.4638"
+    }
+}
+
+allprojects {
+    apply plugin: org.sonarqube.gradle.SonarQubePlugin
+}
