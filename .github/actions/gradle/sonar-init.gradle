@@ -9,4 +9,7 @@ initscript {
   }
 }
 
-apply plugin: "org.sonarqube"
+allprojects {
+    apply plugin: "java"
+    apply plugin: "org.sonarqube"
+}
