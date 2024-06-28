@@ -1,6 +1,6 @@
 initscript {
     repositories {
-        mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:5.0.0.4638"
